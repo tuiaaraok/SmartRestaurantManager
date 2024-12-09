@@ -69,6 +69,10 @@ class RestaurantMenuViewController: UIViewController {
         }
         self.navigationController?.pushViewController(productFormVC, animated: true)
     }
+    
+    deinit {
+        viewModel.clear()
+    }
 }
 
 extension RestaurantMenuViewController: UICollectionViewDelegate, UICollectionViewDataSource {

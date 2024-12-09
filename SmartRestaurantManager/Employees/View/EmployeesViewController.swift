@@ -90,6 +90,10 @@ class EmployeesViewController: UIViewController {
     @IBAction func clickedAdd(_ sender: UIButton) {
         openEmployeeForm()
     }
+    
+    deinit {
+        viewModel.clear()
+    }
 }
 
 extension EmployeesViewController: UITableViewDelegate, UITableViewDataSource {

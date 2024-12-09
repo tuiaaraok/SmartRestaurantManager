@@ -59,6 +59,10 @@ class EventsViewController: UIViewController {
     @IBAction func clickedAdd(_ sender: UIButton) {
         openEventForm()
     }
+    
+    deinit {
+        viewModel.clear()
+    }
 }
 
 extension EventsViewController: UITableViewDelegate, UITableViewDataSource {
