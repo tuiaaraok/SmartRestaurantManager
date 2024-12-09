@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EmployeeFormViewController" customModule="SmartRestaurantManager" customModuleProvider="target">
+            <connections>
+                <outlet property="createButton" destination="hN0-2A-KBF" id="3GV-11-OZA"/>
+                <outlet property="dateShiftTextField" destination="e6h-bz-5N0" id="ZDd-s8-ceN"/>
+                <outlet property="dropDownImageView" destination="Gze-DM-uvQ" id="LxR-p7-SgQ"/>
+                <outlet property="endShiftTextField" destination="ATP-LL-N1H" id="3Qi-Rc-ovf"/>
+                <outlet property="nameTextField" destination="cEk-tz-Ag0" id="a6K-5r-nC8"/>
+                <outlet property="positionButton" destination="dRr-f0-sVl" id="OkP-ik-2uy"/>
+                <outlet property="startShiftTextField" destination="msd-c6-nyJ" id="lFf-Es-4lX"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="E0n-bL-nVf">
+                    <rect key="frame" x="43" y="253" width="307" height="70"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uc1-Fp-PQJ">
+                            <rect key="frame" x="0.0" y="0.0" width="144.66666666666666" height="70"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start of shift" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fKa-jp-EKw">
+                                    <rect key="frame" x="0.0" y="0.0" width="93" height="20"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="msd-c6-nyJ" customClass="BaseTextField" customModule="SmartRestaurantManager" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="20" width="144.66666666666666" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="sfe-Pu-qES"/>
+                                    </constraints>
+                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="fKa-jp-EKw" firstAttribute="leading" secondItem="msd-c6-nyJ" secondAttribute="leading" id="I40-87-wu9"/>
+                                <constraint firstAttribute="bottom" secondItem="msd-c6-nyJ" secondAttribute="bottom" id="QVw-O1-r2D"/>
+                                <constraint firstItem="fKa-jp-EKw" firstAttribute="top" secondItem="uc1-Fp-PQJ" secondAttribute="top" id="Reb-yU-4Rd"/>
+                                <constraint firstAttribute="trailing" secondItem="msd-c6-nyJ" secondAttribute="trailing" id="TKg-or-12p"/>
+                                <constraint firstItem="msd-c6-nyJ" firstAttribute="leading" secondItem="uc1-Fp-PQJ" secondAttribute="leading" id="Yn8-8q-Mpe"/>
+                                <constraint firstItem="fKa-jp-EKw" firstAttribute="leading" secondItem="uc1-Fp-PQJ" secondAttribute="leading" id="gfz-Bf-Ssd"/>
+                                <constraint firstItem="msd-c6-nyJ" firstAttribute="top" secondItem="fKa-jp-EKw" secondAttribute="bottom" id="yGb-GW-3YV"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aXn-Am-Sxv">
+                            <rect key="frame" x="162.66666666666663" y="0.0" width="144.33333333333337" height="70"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End of shift" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ieA-ch-gSW">
+                                    <rect key="frame" x="0.0" y="0.0" width="86.333333333333329" height="20"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ATP-LL-N1H" customClass="BaseTextField" customModule="SmartRestaurantManager" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="20" width="144.33333333333334" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="hm8-VI-Xkm"/>
+                                    </constraints>
+                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="ieA-ch-gSW" firstAttribute="top" secondItem="aXn-Am-Sxv" secondAttribute="top" id="BHn-p3-vTq"/>
+                                <constraint firstItem="ieA-ch-gSW" firstAttribute="leading" secondItem="ATP-LL-N1H" secondAttribute="leading" id="BQq-jL-4S4"/>
+                                <constraint firstAttribute="bottom" secondItem="ATP-LL-N1H" secondAttribute="bottom" id="f9E-RI-Ghw"/>
+                                <constraint firstAttribute="trailing" secondItem="ATP-LL-N1H" secondAttribute="trailing" id="gkK-Ax-fvz"/>
+                                <constraint firstItem="ieA-ch-gSW" firstAttribute="leading" secondItem="aXn-Am-Sxv" secondAttribute="leading" id="go1-1e-r2j"/>
+                                <constraint firstItem="ATP-LL-N1H" firstAttribute="leading" secondItem="aXn-Am-Sxv" secondAttribute="leading" id="lqE-70-YtO"/>
+                                <constraint firstItem="ATP-LL-N1H" firstAttribute="top" secondItem="ieA-ch-gSW" secondAttribute="bottom" id="rf8-MX-1F0"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                </stackView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter name of the dish" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fiz-uC-Fih">
+                    <rect key="frame" x="42.999999999999986" y="80" width="171.66666666666663" height="20"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cEk-tz-Ag0" customClass="BaseTextField" customModule="SmartRestaurantManager" customModuleProvider="target">
+                    <rect key="frame" x="43" y="100" width="307" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="b1b-SN-QIg"/>
+                    </constraints>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select position" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4yd-T5-mz1">
+                    <rect key="frame" x="43.000000000000007" y="166" width="112.66666666666669" height="20.333333333333343"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dRr-f0-sVl">
+                    <rect key="frame" x="43" y="186.33333333333334" width="307" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="4UX-mB-WZt"/>
+                    </constraints>
+                    <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="choosePosition:" destination="-1" eventType="touchUpInside" id="EGy-La-LTG"/>
+                    </connections>
+                </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowBottom" translatesAutoresizingMaskIntoConstraints="NO" id="Gze-DM-uvQ">
+                    <rect key="frame" x="309" y="199.33333333333334" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="24" id="AZj-sm-BQY"/>
+                        <constraint firstAttribute="height" constant="24" id="Yop-5L-5bV"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of shift" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zx2-jf-UOb">
+                    <rect key="frame" x="43" y="339" width="92" height="20"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e6h-bz-5N0" customClass="BaseTextField" customModule="SmartRestaurantManager" customModuleProvider="target">
+                    <rect key="frame" x="43" y="359" width="307" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="RR2-hh-fbh"/>
+                    </constraints>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hN0-2A-KBF" customClass="BaseButton" customModule="SmartRestaurantManager" customModuleProvider="target">
+                    <rect key="frame" x="39" y="734" width="315" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="N87-zR-fkX"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Create a shift">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="clickedCreate:" destination="-1" eventType="touchUpInside" id="aDG-lV-THR"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <gestureRecognizers/>
+            <constraints>
+                <constraint firstItem="4yd-T5-mz1" firstAttribute="top" secondItem="cEk-tz-Ag0" secondAttribute="bottom" constant="16" id="6XQ-lE-hb5"/>
+                <constraint firstItem="cEk-tz-Ag0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="43" id="7eM-Zk-gWo"/>
+                <constraint firstItem="hN0-2A-KBF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="39" id="DkP-J5-Vh0"/>
+                <constraint firstItem="dRr-f0-sVl" firstAttribute="top" secondItem="4yd-T5-mz1" secondAttribute="bottom" id="Fj7-lQ-SJC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="cEk-tz-Ag0" secondAttribute="trailing" constant="43" id="Igd-MF-dj0"/>
+                <constraint firstItem="E0n-bL-nVf" firstAttribute="top" secondItem="dRr-f0-sVl" secondAttribute="bottom" constant="16.666666666666657" id="KD9-Bg-caY"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="E0n-bL-nVf" secondAttribute="trailing" constant="43" id="LQN-Z2-PQl"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hN0-2A-KBF" secondAttribute="trailing" constant="39" id="PDP-pF-nSA"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="e6h-bz-5N0" secondAttribute="trailing" constant="43" id="VME-L9-WMA"/>
+                <constraint firstItem="Zx2-jf-UOb" firstAttribute="leading" secondItem="e6h-bz-5N0" secondAttribute="leading" id="W1r-Ra-K4j"/>
+                <constraint firstItem="Zx2-jf-UOb" firstAttribute="top" secondItem="E0n-bL-nVf" secondAttribute="bottom" constant="16" id="WF0-Rn-GAg"/>
+                <constraint firstItem="Gze-DM-uvQ" firstAttribute="centerY" secondItem="dRr-f0-sVl" secondAttribute="centerY" id="ePc-LW-Q30"/>
+                <constraint firstItem="cEk-tz-Ag0" firstAttribute="top" secondItem="fiz-uC-Fih" secondAttribute="bottom" id="fBO-bo-aPJ"/>
+                <constraint firstItem="dRr-f0-sVl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="43" id="h9M-Jc-mcW"/>
+                <constraint firstItem="fiz-uC-Fih" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="21" id="kDl-0S-hGI"/>
+                <constraint firstItem="E0n-bL-nVf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="43" id="kGg-x5-k44"/>
+                <constraint firstItem="e6h-bz-5N0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="43" id="mtH-Dh-fm2"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="hN0-2A-KBF" secondAttribute="bottom" constant="24" id="mtM-G5-lU0"/>
+                <constraint firstItem="4yd-T5-mz1" firstAttribute="leading" secondItem="dRr-f0-sVl" secondAttribute="leading" id="mvw-1a-b20"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Gze-DM-uvQ" secondAttribute="trailing" constant="60" id="qW9-mg-O3H"/>
+                <constraint firstItem="fiz-uC-Fih" firstAttribute="leading" secondItem="cEk-tz-Ag0" secondAttribute="leading" id="rE3-9o-jjN"/>
+                <constraint firstItem="e6h-bz-5N0" firstAttribute="top" secondItem="Zx2-jf-UOb" secondAttribute="bottom" id="t7x-j2-fET"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dRr-f0-sVl" secondAttribute="trailing" constant="43" id="ytt-3b-WxG"/>
+            </constraints>
+            <connections>
+                <outletCollection property="gestureRecognizers" destination="s2n-Vm-4gp" appends="YES" id="Ynz-de-c2U"/>
+            </connections>
+            <point key="canvasLocation" x="136.64122137404578" y="19.718309859154932"/>
+        </view>
+        <tapGestureRecognizer id="s2n-Vm-4gp">
+            <connections>
+                <action selector="handleTapGesture:" destination="-1" id="KVe-kj-P6V"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+    <resources>
+        <image name="arrowBottom" width="24" height="24"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

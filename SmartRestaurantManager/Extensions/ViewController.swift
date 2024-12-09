@@ -63,6 +63,10 @@ extension UIViewController {
                 }
             case 1:
                 self.pushViewController(ProductFormViewController.self)
+            case 2:
+                if !(self is EmployeesViewController) {
+                    self.navigationController?.viewControllers = [EmployeesViewController(nibName: "EmployeesViewController", bundle: nil)]
+                }
             default:
                 break
             }

@@ -108,6 +108,64 @@ class CoreDataManager {
         }
     }
     
+    func saveEmployee(employeeModel: EmployeeModel, completion: @escaping (Error?) -> Void) {
+        let id = employeeModel.id
+        let backgroundContext = persistentContainer.newBackgroundContext()
+        backgroundContext.perform {
+            let fetchRequest: NSFetchRequest<Employee> = Employee.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+            
+            do {
+                let results = try backgroundContext.fetch(fetchRequest)
+                let employee: Employee
+                
+                if let existingEmployee = results.first {
+                    employee = existingEmployee
+                } else {
+                    employee = Employee(context: backgroundContext)
+                    employee.id = id
+                }
+                
+                employee.name = employeeModel.name
+                employee.position = Int32(employeeModel.position ?? 1)
+                employee.startOfShift = employeeModel.startOfShift
+                employee.endOfShift = employeeModel.endOfShift
+                employee.datesOfShift = employeeModel.datesOfShift
+                
+                try backgroundContext.save()
+                DispatchQueue.main.async {
+                    completion(nil)
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completion(error)
+                }
+            }
+        }
+    }
+    
+    func fetchEmployees(completion: @escaping ([EmployeeModel], Error?) -> Void) {
+        let backgroundContext = persistentContainer.newBackgroundContext()
+        backgroundContext.perform {
+            let fetchRequest: NSFetchRequest<Employee> = Employee.fetchRequest()
+            do {
+                let results = try backgroundContext.fetch(fetchRequest)
+                var employeesModel: [EmployeeModel] = []
+                for result in results {
+                    let employeeModel = EmployeeModel(id: result.id ?? UUID(), name: result.name, position: Int(result.position), startOfShift: result.startOfShift, endOfShift: result.endOfShift, datesOfShift: result.datesOfShift)
+                    employeesModel.append(employeeModel)
+                }
+                DispatchQueue.main.async {
+                    completion(employeesModel, nil)
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completion([], error)
+                }
+            }
+        }
+    }
+    
 //    func changeTaskStatus(id: UUID, status: Int, completion: @escaping (Error?) -> Void) {
 //        let backgroundContext = persistentContainer.newBackgroundContext()
 //        backgroundContext.perform {

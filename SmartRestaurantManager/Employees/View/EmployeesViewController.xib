@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EmployeesViewController" customModule="SmartRestaurantManager" customModuleProvider="target">
+            <connections>
+                <outlet property="dateButton" destination="cMu-B0-syp" id="nyJ-Wy-ZhE"/>
+                <outlet property="employeesTableView" destination="OKg-KI-D1m" id="nev-uD-SAH"/>
+                <outlet property="positionsCollectionView" destination="pf6-KN-2Sj" id="xUY-tM-VMc"/>
+                <outlet property="tapGesture" destination="0Va-fg-TxX" id="0lr-E6-UEp"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cMu-B0-syp">
+                    <rect key="frame" x="69" y="97" width="255" height="22"/>
+                    <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Today, December 2nd" image="calendar">
+                        <color key="titleColor" name="baseGreen"/>
+                    </state>
+                    <connections>
+                        <action selector="chooseDate:" destination="-1" eventType="touchUpInside" id="eNu-QV-d6R"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cu9-AC-d4o">
+                    <rect key="frame" x="340" y="96" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="24" id="XaE-ek-pWN"/>
+                        <constraint firstAttribute="height" constant="24" id="gER-7V-iIe"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="addGreen">
+                        <color key="titleColor" name="baseGreen"/>
+                    </state>
+                    <connections>
+                        <action selector="clickedAdd:" destination="-1" eventType="touchUpInside" id="n2C-uR-YgF"/>
+                    </connections>
+                </button>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="pf6-KN-2Sj">
+                    <rect key="frame" x="0.0" y="155" width="393" height="44"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="uB3-3l-xKW"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="JdK-s4-Dg7">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="OKg-KI-D1m">
+                    <rect key="frame" x="0.0" y="237" width="393" height="581"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <gestureRecognizers/>
+            <constraints>
+                <constraint firstItem="pf6-KN-2Sj" firstAttribute="top" secondItem="cMu-B0-syp" secondAttribute="bottom" constant="36" id="27E-lB-tq3"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="pf6-KN-2Sj" secondAttribute="trailing" id="4lU-rE-xL7"/>
+                <constraint firstItem="Cu9-AC-d4o" firstAttribute="leading" secondItem="cMu-B0-syp" secondAttribute="trailing" constant="16" id="GFJ-AT-l0A"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="OKg-KI-D1m" secondAttribute="trailing" id="K7a-Mp-ivq"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="OKg-KI-D1m" secondAttribute="bottom" id="KjH-FR-2NG"/>
+                <constraint firstItem="cMu-B0-syp" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Nff-K2-VkU"/>
+                <constraint firstItem="pf6-KN-2Sj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="cYA-8Y-6ku"/>
+                <constraint firstItem="OKg-KI-D1m" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="dZe-er-k6O"/>
+                <constraint firstItem="cMu-B0-syp" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="38" id="qMB-fy-lIc"/>
+                <constraint firstItem="OKg-KI-D1m" firstAttribute="top" secondItem="pf6-KN-2Sj" secondAttribute="bottom" constant="38" id="qnA-3V-T0R"/>
+                <constraint firstItem="Cu9-AC-d4o" firstAttribute="centerY" secondItem="cMu-B0-syp" secondAttribute="centerY" id="was-5M-5p6"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Cu9-AC-d4o" secondAttribute="trailing" constant="29" id="zOu-TT-S6d"/>
+            </constraints>
+            <connections>
+                <outletCollection property="gestureRecognizers" destination="0Va-fg-TxX" appends="YES" id="1pU-gV-aSc"/>
+            </connections>
+            <point key="canvasLocation" x="136.64122137404578" y="19.718309859154932"/>
+        </view>
+        <tapGestureRecognizer id="0Va-fg-TxX">
+            <connections>
+                <action selector="handleTapGesture:" destination="-1" id="4to-3s-4WU"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+    <resources>
+        <image name="addGreen" width="24" height="24"/>
+        <image name="calendar" width="17.666666030883789" height="19.666666030883789"/>
+        <namedColor name="baseGreen">
+            <color red="0.30199998617172241" green="0.63899999856948853" blue="0.30199998617172241" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

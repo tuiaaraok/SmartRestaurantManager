@@ -14,6 +14,33 @@ extension Date {
         return dateFormatter.string(from: self)
     }
     
+    func toStringFormat() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMMM d"
+        let formattedDate = dateFormatter.string(from: self)
+        let day = Calendar.current.component(.day, from: self)
+        let dayWithSuffix = dayWithOrdinalSuffix(day: day)
+        return formattedDate.replacingOccurrences(of: "\(day)", with: dayWithSuffix)
+    }
+    
+    private func dayWithOrdinalSuffix(day: Int) -> String {
+        switch day {
+        case 11, 12, 13:
+            return "\(day)th"
+        default:
+            switch day % 10 {
+            case 1:
+                return "\(day)st"
+            case 2:
+                return "\(day)nd"
+            case 3:
+                return "\(day)rd"
+            default:
+                return "\(day)th"
+            }
+        }
+    }
+    
     func stripTime() -> Date {
         let calendar = Calendar.current
         return calendar.startOfDay(for: self)
