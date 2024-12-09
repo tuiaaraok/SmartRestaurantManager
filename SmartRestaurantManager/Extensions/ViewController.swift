@@ -50,6 +50,12 @@ extension UIViewController {
         switch self {
         case is RestaurantMenuViewController:
             tab = 0
+        case is ProductFormViewController:
+            tab = 1
+        case is EmployeesViewController:
+            tab = 2
+        case is EventsViewController:
+            tab = 3
         default:
             tab = 1
         }
@@ -66,6 +72,10 @@ extension UIViewController {
             case 2:
                 if !(self is EmployeesViewController) {
                     self.navigationController?.viewControllers = [EmployeesViewController(nibName: "EmployeesViewController", bundle: nil)]
+                }
+            case 3:
+                if !(self is EventsViewController) {
+                    self.navigationController?.viewControllers = [EventsViewController(nibName: "EventsViewController", bundle: nil)]
                 }
             default:
                 break

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EventFormViewController" customModule="SmartRestaurantManager" customModuleProvider="target">
+            <connections>
+                <outlet property="dateTextField" destination="Ngh-ap-df4" id="kjq-91-oMB"/>
+                <outlet property="endTimeTextField" destination="lHL-Hu-kc6" id="sJa-MP-OkV"/>
+                <outlet property="guestsTextField" destination="s30-nV-BWy" id="7Gi-Qn-fup"/>
+                <outlet property="nameTextField" destination="c5s-ya-f2v" id="Lfc-IG-CEd"/>
+                <outlet property="saveButton" destination="JBr-a5-Qgt" id="E1X-Z4-Sfq"/>
+                <outlet property="startTimeTextField" destination="PtO-U5-cbD" id="FWL-kF-sAh"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outletCollection property="titleLabels" destination="sJB-OY-gHc" collectionClass="NSMutableArray" id="jbp-0j-CjL"/>
+                <outletCollection property="titleLabels" destination="YYC-GP-fwD" collectionClass="NSMutableArray" id="aHF-j9-Erz"/>
+                <outletCollection property="titleLabels" destination="Nbm-Lu-Ubd" collectionClass="NSMutableArray" id="pJU-kP-21F"/>
+                <outletCollection property="titleLabels" destination="MtU-Fz-DTD" collectionClass="NSMutableArray" id="C6G-lt-rrH"/>
+                <outletCollection property="titleLabels" destination="BFu-m1-G5g" collectionClass="NSMutableArray" id="wTF-Oy-xHn"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJB-OY-gHc">
+                    <rect key="frame" x="43" y="89" width="90" height="20"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c5s-ya-f2v" customClass="BaseTextField" customModule="SmartRestaurantManager" customModuleProvider="target">
+                    <rect key="frame" x="43" y="109" width="307" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="4Gi-TC-fwg"/>
+                    </constraints>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of guests" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YYC-GP-fwD">
+                    <rect key="frame" x="43" y="175" width="136.66666666666666" height="20.333333333333343"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nbm-Lu-Ubd">
+                    <rect key="frame" x="43" y="262" width="86" height="20"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ngh-ap-df4" customClass="BaseTextField" customModule="SmartRestaurantManager" customModuleProvider="target">
+                    <rect key="frame" x="43" y="282" width="307" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="YAh-Jx-aau"/>
+                    </constraints>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JBr-a5-Qgt" customClass="BaseButton" customModule="SmartRestaurantManager" customModuleProvider="target">
+                    <rect key="frame" x="39" y="734" width="315" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="bvf-3o-fbH"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Save a event">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="clickedSave:" destination="-1" eventType="touchUpInside" id="SAP-Yv-YSa"/>
+                    </connections>
+                </button>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="wvx-iy-Zo2">
+                    <rect key="frame" x="43" y="348" width="307" height="70"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pst-T8-fDd">
+                            <rect key="frame" x="0.0" y="0.0" width="144.66666666666666" height="70"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MtU-Fz-DTD">
+                                    <rect key="frame" x="0.0" y="0.0" width="78.666666666666671" height="20"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PtO-U5-cbD" customClass="BaseTextField" customModule="SmartRestaurantManager" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="20" width="144.66666666666666" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="cQU-dX-gcx"/>
+                                    </constraints>
+                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="PtO-U5-cbD" secondAttribute="bottom" id="EGG-NU-I34"/>
+                                <constraint firstItem="MtU-Fz-DTD" firstAttribute="leading" secondItem="pst-T8-fDd" secondAttribute="leading" id="I7t-Iv-QQZ"/>
+                                <constraint firstItem="PtO-U5-cbD" firstAttribute="leading" secondItem="pst-T8-fDd" secondAttribute="leading" id="M7c-QZ-oVj"/>
+                                <constraint firstAttribute="trailing" secondItem="PtO-U5-cbD" secondAttribute="trailing" id="irP-jL-dnV"/>
+                                <constraint firstItem="MtU-Fz-DTD" firstAttribute="top" secondItem="pst-T8-fDd" secondAttribute="top" id="s2O-NM-7aZ"/>
+                                <constraint firstItem="MtU-Fz-DTD" firstAttribute="leading" secondItem="PtO-U5-cbD" secondAttribute="leading" id="wBO-c3-NAj"/>
+                                <constraint firstItem="PtO-U5-cbD" firstAttribute="top" secondItem="MtU-Fz-DTD" secondAttribute="bottom" id="x0l-xI-Z8p"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lKW-CR-4Dq">
+                            <rect key="frame" x="162.66666666666663" y="0.0" width="144.33333333333337" height="70"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BFu-m1-G5g">
+                                    <rect key="frame" x="0.0" y="0.0" width="72" height="20"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lHL-Hu-kc6" customClass="BaseTextField" customModule="SmartRestaurantManager" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="20" width="144.33333333333334" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="fkZ-px-s3N"/>
+                                    </constraints>
+                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="BFu-m1-G5g" firstAttribute="leading" secondItem="lHL-Hu-kc6" secondAttribute="leading" id="0LF-iN-ya4"/>
+                                <constraint firstAttribute="bottom" secondItem="lHL-Hu-kc6" secondAttribute="bottom" id="P6S-Wh-NeO"/>
+                                <constraint firstItem="BFu-m1-G5g" firstAttribute="top" secondItem="lKW-CR-4Dq" secondAttribute="top" id="TO4-t1-2kW"/>
+                                <constraint firstAttribute="trailing" secondItem="lHL-Hu-kc6" secondAttribute="trailing" id="dis-NU-w8n"/>
+                                <constraint firstItem="BFu-m1-G5g" firstAttribute="leading" secondItem="lKW-CR-4Dq" secondAttribute="leading" id="hSM-WH-dq3"/>
+                                <constraint firstItem="lHL-Hu-kc6" firstAttribute="top" secondItem="BFu-m1-G5g" secondAttribute="bottom" id="t2h-ST-OMl"/>
+                                <constraint firstItem="lHL-Hu-kc6" firstAttribute="leading" secondItem="lKW-CR-4Dq" secondAttribute="leading" id="uYv-Xj-fYC"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                </stackView>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s30-nV-BWy" customClass="BaseTextField" customModule="SmartRestaurantManager" customModuleProvider="target">
+                    <rect key="frame" x="43" y="195.33333333333334" width="307" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="AUX-UY-NLI"/>
+                    </constraints>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                </textField>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <gestureRecognizers/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="JBr-a5-Qgt" secondAttribute="trailing" constant="39" id="0LW-xW-oBQ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ngh-ap-df4" secondAttribute="trailing" constant="43" id="4YF-mE-6At"/>
+                <constraint firstItem="sJB-OY-gHc" firstAttribute="leading" secondItem="c5s-ya-f2v" secondAttribute="leading" id="8mq-kx-ov2"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="s30-nV-BWy" secondAttribute="trailing" constant="43" id="Aly-da-rLd"/>
+                <constraint firstItem="YYC-GP-fwD" firstAttribute="top" secondItem="c5s-ya-f2v" secondAttribute="bottom" constant="16" id="HrE-92-Dq5"/>
+                <constraint firstItem="wvx-iy-Zo2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="43" id="IC4-fE-NBP"/>
+                <constraint firstItem="Nbm-Lu-Ubd" firstAttribute="leading" secondItem="Ngh-ap-df4" secondAttribute="leading" id="L5U-Iu-wlM"/>
+                <constraint firstItem="c5s-ya-f2v" firstAttribute="top" secondItem="sJB-OY-gHc" secondAttribute="bottom" id="PEN-N2-t12"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="c5s-ya-f2v" secondAttribute="trailing" constant="43" id="XDg-98-OOV"/>
+                <constraint firstItem="JBr-a5-Qgt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="39" id="YT9-KU-gpF"/>
+                <constraint firstItem="YYC-GP-fwD" firstAttribute="leading" secondItem="s30-nV-BWy" secondAttribute="leading" id="ZDW-yR-CQp"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="JBr-a5-Qgt" secondAttribute="bottom" constant="24" id="am8-SL-Rhc"/>
+                <constraint firstItem="sJB-OY-gHc" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="bSD-X4-fuZ"/>
+                <constraint firstItem="wvx-iy-Zo2" firstAttribute="top" secondItem="Ngh-ap-df4" secondAttribute="bottom" constant="16" id="dZu-Rr-Td5"/>
+                <constraint firstItem="Ngh-ap-df4" firstAttribute="top" secondItem="Nbm-Lu-Ubd" secondAttribute="bottom" id="hja-nA-xc2"/>
+                <constraint firstItem="Ngh-ap-df4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="43" id="jUF-Hy-zfl"/>
+                <constraint firstItem="c5s-ya-f2v" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="43" id="lJ7-X1-xVu"/>
+                <constraint firstItem="s30-nV-BWy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="43" id="sIJ-cH-qOx"/>
+                <constraint firstItem="s30-nV-BWy" firstAttribute="top" secondItem="YYC-GP-fwD" secondAttribute="bottom" id="tRY-gA-1gY"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="wvx-iy-Zo2" secondAttribute="trailing" constant="43" id="txq-1h-HhO"/>
+                <constraint firstItem="Nbm-Lu-Ubd" firstAttribute="top" secondItem="s30-nV-BWy" secondAttribute="bottom" constant="16.666666666666657" id="xKH-3n-dqC"/>
+            </constraints>
+            <connections>
+                <outletCollection property="gestureRecognizers" destination="yjI-iD-2iZ" appends="YES" id="1o7-uD-65j"/>
+            </connections>
+            <point key="canvasLocation" x="117" y="20"/>
+        </view>
+        <tapGestureRecognizer id="yjI-iD-2iZ">
+            <connections>
+                <action selector="handleTapGesture:" destination="-1" id="6cU-1K-21j"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

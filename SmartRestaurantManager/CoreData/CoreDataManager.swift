@@ -166,6 +166,63 @@ class CoreDataManager {
         }
     }
     
+    func saveEvent(eventModel: EventModel, completion: @escaping (Error?) -> Void) {
+        let id = eventModel.id
+        let backgroundContext = persistentContainer.newBackgroundContext()
+        backgroundContext.perform {
+            let fetchRequest: NSFetchRequest<Event> = Event.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+            
+            do {
+                let results = try backgroundContext.fetch(fetchRequest)
+                let event: Event
+                
+                if let existingEvent = results.first {
+                    event = existingEvent
+                } else {
+                    event = Event(context: backgroundContext)
+                    event.id = id
+                }
+                
+                event.name = eventModel.name
+                event.numberGuests = Int64(eventModel.numberGuests ?? 0)
+                event.date = eventModel.date
+                event.startTime = eventModel.startTime
+                event.endTime = eventModel.endTime
+                try backgroundContext.save()
+                DispatchQueue.main.async {
+                    completion(nil)
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completion(error)
+                }
+            }
+        }
+    }
+    
+    func fetchEvents(completion: @escaping ([EventModel], Error?) -> Void) {
+        let backgroundContext = persistentContainer.newBackgroundContext()
+        backgroundContext.perform {
+            let fetchRequest: NSFetchRequest<Event> = Event.fetchRequest()
+            do {
+                let results = try backgroundContext.fetch(fetchRequest)
+                var eventsModel: [EventModel] = []
+                for result in results {
+                    let eventModel = EventModel(id: result.id ?? UUID(), name: result.name, numberGuests: Int(result.numberGuests), date: result.date, startTime: result.startTime, endTime: result.endTime)
+                    eventsModel.append(eventModel)
+                }
+                DispatchQueue.main.async {
+                    completion(eventsModel, nil)
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completion([], error)
+                }
+            }
+        }
+    }
+    
 //    func changeTaskStatus(id: UUID, status: Int, completion: @escaping (Error?) -> Void) {
 //        let backgroundContext = persistentContainer.newBackgroundContext()
 //        backgroundContext.perform {

@@ -10,6 +10,7 @@ target 'SmartRestaurantManager' do
   pod 'Firebase/RemoteConfig'
   pod 'DropDown'
   pod 'Cosmos'
+  pod 'FSCalendar'
 
 post_install do |installer|
   installer.pods_project.targets.each do |target|
