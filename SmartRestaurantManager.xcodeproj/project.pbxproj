@@ -43,6 +43,9 @@
 		6B83ADF72D0618190061FB37 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B83ADF62D0618190061FB37 /* MenuViewModel.swift */; };
 		6B83ADFA2D06185B0061FB37 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B83ADF92D06185B0061FB37 /* CoreDataManager.swift */; };
 		6B83ADFC2D061E270061FB37 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B83ADFB2D061E270061FB37 /* Double.swift */; };
+		6B997BDF2D06F29100FB3C4F /* ProductDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B997BDE2D06F29100FB3C4F /* ProductDetailsViewController.xib */; };
+		6B997BE02D06F29100FB3C4F /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B997BDD2D06F29100FB3C4F /* ProductDetailsViewController.swift */; };
+		6B997BE32D06F59800FB3C4F /* ProductDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B997BE22D06F59800FB3C4F /* ProductDetailsViewModel.swift */; };
 		6BF42BDF2D062B250042CFB6 /* PaddingTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF42BDE2D062B250042CFB6 /* PaddingTextView.swift */; };
 		6BF42BE22D062C020042CFB6 /* ProductFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF42BE12D062C020042CFB6 /* ProductFormViewModel.swift */; };
 		6BF42BE42D0632340042CFB6 /* TabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF42BE32D0632340042CFB6 /* TabButton.swift */; };
@@ -91,6 +94,9 @@
 		6B83ADF62D0618190061FB37 /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
 		6B83ADF92D06185B0061FB37 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		6B83ADFB2D061E270061FB37 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		6B997BDD2D06F29100FB3C4F /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
+		6B997BDE2D06F29100FB3C4F /* ProductDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductDetailsViewController.xib; sourceTree = "<group>"; };
+		6B997BE22D06F59800FB3C4F /* ProductDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewModel.swift; sourceTree = "<group>"; };
 		6BF42BDE2D062B250042CFB6 /* PaddingTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingTextView.swift; sourceTree = "<group>"; };
 		6BF42BE12D062C020042CFB6 /* ProductFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductFormViewModel.swift; sourceTree = "<group>"; };
 		6BF42BE32D0632340042CFB6 /* TabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButton.swift; sourceTree = "<group>"; };
@@ -141,6 +147,7 @@
 		6B83ADA82D0596CA0061FB37 /* SmartRestaurantManager */ = {
 			isa = PBXGroup;
 			children = (
+				6B997BDB2D06F1ED00FB3C4F /* ProductDetails */,
 				6B83ADF82D06183C0061FB37 /* CoreData */,
 				6B83ADE12D05AACC0061FB37 /* Menu */,
 				6B83ADDB2D05A9860061FB37 /* ProductForm */,
@@ -291,6 +298,32 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		6B997BDB2D06F1ED00FB3C4F /* ProductDetails */ = {
+			isa = PBXGroup;
+			children = (
+				6B997BE12D06F58600FB3C4F /* ViewModel */,
+				6B997BDC2D06F23E00FB3C4F /* View */,
+			);
+			path = ProductDetails;
+			sourceTree = "<group>";
+		};
+		6B997BDC2D06F23E00FB3C4F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6B997BDD2D06F29100FB3C4F /* ProductDetailsViewController.swift */,
+				6B997BDE2D06F29100FB3C4F /* ProductDetailsViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6B997BE12D06F58600FB3C4F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				6B997BE22D06F59800FB3C4F /* ProductDetailsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		6BF42BE02D062BF20042CFB6 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -369,6 +402,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B997BDF2D06F29100FB3C4F /* ProductDetailsViewController.xib in Resources */,
 				6B83ADEC2D0606980061FB37 /* ProductTypeCollectionViewCell.xib in Resources */,
 				6B83ADAA2D0596CA0061FB37 /* Assets.xcassets in Resources */,
 				6B83ADF02D060FB30061FB37 /* ProductTableViewCell.xib in Resources */,
@@ -442,6 +476,7 @@
 				6B83ADB02D0596CA0061FB37 /* SmartRestaurantManager.xcdatamodeld in Sources */,
 				6B83ADB12D0596CA0061FB37 /* RootViewController.swift in Sources */,
 				6B83ADC22D0598600061FB37 /* ViewController.swift in Sources */,
+				6B997BE32D06F59800FB3C4F /* ProductDetailsViewModel.swift in Sources */,
 				6B83ADC32D0598600061FB37 /* BaseTextField.swift in Sources */,
 				6BF42BE42D0632340042CFB6 /* TabButton.swift in Sources */,
 				6B83ADC42D0598600061FB37 /* UIView.swift in Sources */,
@@ -449,6 +484,7 @@
 				6B83ADFA2D06185B0061FB37 /* CoreDataManager.swift in Sources */,
 				6B83ADFC2D061E270061FB37 /* Double.swift in Sources */,
 				6B83ADE62D05AADB0061FB37 /* MenuViewController.swift in Sources */,
+				6B997BE02D06F29100FB3C4F /* ProductDetailsViewController.swift in Sources */,
 				6BF42BE22D062C020042CFB6 /* ProductFormViewModel.swift in Sources */,
 				6B83ADC52D0598600061FB37 /* BaseButton.swift in Sources */,
 				6B83ADDA2D05A9460061FB37 /* RestaurantMenuViewController.swift in Sources */,
