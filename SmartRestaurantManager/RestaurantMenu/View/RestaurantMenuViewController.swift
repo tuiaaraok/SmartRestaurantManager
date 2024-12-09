@@ -24,6 +24,10 @@ class RestaurantMenuViewController: UIViewController {
         viewModel.fetchData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        viewModel.fetchData()
+    }
+    
     func setupUI() {
         searchTextField.setupRightViewIcon(.searchIcon, size: CGSize(width: 40, height: 40))
         searchTextField.layer.borderWidth = 1
@@ -42,6 +46,7 @@ class RestaurantMenuViewController: UIViewController {
         productsTableView.register(UINib(nibName: "ProductTableViewCell", bundle: nil), forCellReuseIdentifier: "ProductTableViewCell")
         productsTableView.delegate = self
         productsTableView.dataSource = self
+        searchTextField.delegate = self
     }
     
     func subscribe() {
@@ -49,9 +54,20 @@ class RestaurantMenuViewController: UIViewController {
             .receive(on: DispatchQueue.main)
             .sink { [weak self] _ in
                 guard let self = self else { return }
+                self.productTypeCollectionView.selectItem(at: IndexPath(item: self.viewModel.selectedType, section: 0), animated: true, scrollPosition: .left)
                 self.productsTableView.reloadData()
             }
             .store(in: &cancellables)
+    }
+    
+    func openProductForm() {
+        let productFormVC = ProductFormViewController(nibName: "ProductFormViewController", bundle: nil)
+        productFormVC.completion = { [weak self] in
+            if let self = self {
+                self.viewModel.fetchData()
+            }
+        }
+        self.navigationController?.pushViewController(productFormVC, animated: true)
     }
 }
 
@@ -64,6 +80,10 @@ extension RestaurantMenuViewController: UICollectionViewDelegate, UICollectionVi
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductTypeCollectionViewCell", for: indexPath) as! ProductTypeCollectionViewCell
         cell.configure(name: ProductType.allCases[indexPath.item].rawValue)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.filter(by: indexPath.item)
     }
 }
 
@@ -91,6 +111,48 @@ extension RestaurantMenuViewController: UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         8
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: "") { [weak self] (action, view, handler) in
+            guard let self = self else { return }
+            self.viewModel.remove(by: viewModel.products[indexPath.section].id) { [weak self] error in
+                guard let self = self else { return }
+                if let error = error {
+                    self.showErrorAlert(message: error.localizedDescription)
+                } else {
+                    self.viewModel.fetchData()
+                    handler(true)
+                }
+            }
+        }
+        
+        let editAction = UIContextualAction(style: .normal, title: "") { [weak self] (action, view, handler) in
+            guard let self = self else { return }
+            ProductFormViewModel.shared.product = self.viewModel.products[indexPath.section]
+            self.openProductForm()
+        }
+        deleteAction.backgroundColor = .white
+        deleteAction.image = UIImage.removeIcon
+        editAction.backgroundColor = .white
+        editAction.image = .editIcon
+        let configuration = UISwipeActionsConfiguration(actions: [deleteAction, editAction])
+        configuration.performsFirstActionWithFullSwipe = true
+        return configuration
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+}
+
+extension RestaurantMenuViewController: UITextFieldDelegate {
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        viewModel.search(by: textField.text)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        view.endEditing(true)
     }
 }
 

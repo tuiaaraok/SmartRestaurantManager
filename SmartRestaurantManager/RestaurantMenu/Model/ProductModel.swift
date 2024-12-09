@@ -10,7 +10,7 @@ import Foundation
 struct ProductModel {
     var id: UUID
     var name: String?
-    var price: Double?
+    var price: String?
     var category: Int?
     var info: String?
     var rating: Double = 0

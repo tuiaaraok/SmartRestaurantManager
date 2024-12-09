@@ -29,7 +29,8 @@ class ProductTableViewCell: UITableViewCell {
             photoImageView.image = nil
         }
         nameLabel.text = product.name
-        priceLabel.text = "$\(product.price?.formattedToString() ?? "")"
+        priceLabel.text = "$ \(product.price ?? "")"
+        cosmosView.rating = product.rating
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

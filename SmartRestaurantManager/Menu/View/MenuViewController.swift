@@ -9,21 +9,36 @@ import UIKit
 
 class MenuViewController: UIViewController {
 
+    @IBOutlet var tabButtons: [TabButton]!
+    var completion: ((Int) -> ())?
+    var selectedTab: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        tabButtons[selectedTab].isSelected = true
     }
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func clickedRestaurantMenu(_ sender: TabButton) {
+        self.completion?(0)
+        self.dismiss(animated: true)
     }
-    */
-
+    
+    @IBAction func clickedAddDish(_ sender: TabButton) {
+        self.completion?(1)
+        self.dismiss(animated: true)
+    }
+    
+    @IBAction func clickedSchedule(_ sender: TabButton) {
+        self.completion?(2)
+        self.dismiss(animated: true)
+    }
+    
+    @IBAction func clickedEvents(_ sender: TabButton) {
+        self.completion?(3)
+        self.dismiss(animated: true)
+    }
+    
+    @IBAction func clickedClose(_ sender: UIButton) {
+        self.dismiss(animated: true)
+    }
 }

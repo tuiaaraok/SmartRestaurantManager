@@ -13,7 +13,7 @@ extension UIViewController {
         let titleLabel = UILabel()
         titleLabel.text = title
         titleLabel.textColor = .black
-        titleLabel.font = .medium(size: 22)
+        titleLabel.font = .semibold(size: 22)
         titleLabel.textAlignment = .center
         titleLabel.sizeToFit()
         self.navigationItem.titleView = titleLabel
@@ -33,16 +33,41 @@ extension UIViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: menuButton)
     }
     
-    @objc func clickedMenu() {
-        self.pushViewController(MenuViewController.self)
-    }
-    
     @objc func clickedBack() {
         navigationController?.popViewController(animated: true)
     }
     
     @objc func handleTap() {
         self.view.endEditing(true)
+    }
+    
+    @objc func clickedMenu() {
+        let transitingDelegate = InfoTransitioningDelegate()
+        let menuViewController = MenuViewController(nibName: "MenuViewController", bundle: nil)
+        menuViewController.modalPresentationStyle = .custom
+        menuViewController.transitioningDelegate = transitingDelegate
+        var tab = 1
+        switch self {
+        case is RestaurantMenuViewController:
+            tab = 0
+        default:
+            tab = 1
+        }
+        menuViewController.selectedTab = tab
+        menuViewController.completion = { [weak self] index in
+            guard let self = self else { return }
+            switch index {
+            case 0:
+                if !(self is RestaurantMenuViewController) {
+                    self.navigationController?.viewControllers = [RestaurantMenuViewController(nibName: "RestaurantMenuViewController", bundle: nil)]
+                }
+            case 1:
+                self.pushViewController(ProductFormViewController.self)
+            default:
+                break
+            }
+        }
+        present(menuViewController, animated: false)
     }
     
     func pushViewController<T: UIViewController>(_ viewControllerType: T.Type, animated: Bool = true) {
