@@ -104,8 +104,10 @@ class ProductFormViewController: UIViewController {
                 self.descriptionTextView.text = product.info
                 self.cosmosView.rating = product.rating
                 if let data = product.photo {
+                    self.photoButton.imageView?.contentMode = .scaleToFill
                     self.photoButton.setImage(UIImage(data: data), for: .normal)
                 } else {
+                    self.photoButton.imageView?.contentMode = .scaleAspectFit
                     self.photoButton.setImage(.imagePlaceholder, for: .normal)
                 }
                 self.saveButton.isEnabled = (product.name.checkValidation() && product.price != nil && product.category != nil && product.photo != nil && product.info != nil)

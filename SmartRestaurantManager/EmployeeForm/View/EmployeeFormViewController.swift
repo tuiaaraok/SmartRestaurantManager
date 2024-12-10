@@ -10,6 +10,7 @@ import DropDown
 import Combine
 
 class EmployeeFormViewController: UIViewController {
+    @IBOutlet var titleLabels: [UILabel]!
     @IBOutlet weak var nameTextField: BaseTextField!
     @IBOutlet weak var positionButton: UIButton!
     @IBOutlet weak var startShiftTextField: BaseTextField!
@@ -39,6 +40,7 @@ class EmployeeFormViewController: UIViewController {
     func setupUI() {
         setNavigationBackButton()
         setNavigationTitle(title: "Add shift")
+        titleLabels.forEach({ $0.font = .regular(size: 20) })
         positionButton.layer.cornerRadius = 10
         positionButton.layer.borderWidth = 2
         positionButton.layer.borderColor = UIColor.black.cgColor

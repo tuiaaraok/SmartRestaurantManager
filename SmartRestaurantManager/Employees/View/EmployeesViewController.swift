@@ -29,6 +29,7 @@ class EmployeesViewController: UIViewController {
     func setupUI() {
         setNavigationMenuButton()
         setNavigationTitle(title: "Employee schedule")
+        dateButton.titleLabel?.font = .medium(size: 18)
         employeesTableView.register(UINib(nibName: "EmployeeTableViewCell", bundle: nil), forCellReuseIdentifier: "EmployeeTableViewCell")
         employeesTableView.delegate = self
         employeesTableView.dataSource = self
