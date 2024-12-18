@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MessageUI
 
 extension UIViewController {
     
@@ -77,6 +78,35 @@ extension UIViewController {
                 if !(self is EventsViewController) {
                     self.navigationController?.viewControllers = [EventsViewController(nibName: "EventsViewController", bundle: nil)]
                 }
+            case 4:
+                if MFMailComposeViewController.canSendMail() {
+                    let mailComposeVC = MFMailComposeViewController()
+                    mailComposeVC.mailComposeDelegate = self
+                    mailComposeVC.setToRecipients(["berkayumutozdamar@icloud.com"])
+                    present(mailComposeVC, animated: true, completion: nil)
+                } else {
+                    let alert = UIAlertController(
+                        title: "Mail Not Available",
+                        message: "Please configure a Mail account in your settings.",
+                        preferredStyle: .alert
+                    )
+                    alert.addAction(UIAlertAction(title: "OK", style: .default))
+                    present(alert, animated: true)
+                }
+            case 5:
+                let privacyVC = PrivacyViewController()
+                self.hidesBottomBarWhenPushed = true
+                self.navigationController?.pushViewController(privacyVC, animated: true)
+                self.hidesBottomBarWhenPushed = false
+            case 6:
+                let appID = "6739556691"
+                if let url = URL(string: "https://apps.apple.com/app/id\(appID)?action=write-review") {
+                    if UIApplication.shared.canOpenURL(url) {
+                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                    } else {
+                        print("Unable to open App Store URL")
+                    }
+                }
             default:
                 break
             }
@@ -103,3 +133,8 @@ extension UIViewController {
     }
 }
 
+extension UIViewController: @retroactive MFMailComposeViewControllerDelegate {
+    public func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+}

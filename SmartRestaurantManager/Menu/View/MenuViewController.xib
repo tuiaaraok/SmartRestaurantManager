@@ -127,7 +127,6 @@
                             <state key="selected" image="restaurantMenuIconHighlighted"/>
                             <connections>
                                 <action selector="clickedContactUs:" destination="-1" eventType="touchUpInside" id="deZ-Kn-wYg"/>
-                                <action selector="clickedRestaurantMenu:" destination="-1" eventType="touchUpInside" id="fFY-Ne-dcU"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Cy-zF-rpT" customClass="TabButton" customModule="SmartRestaurantManager" customModuleProvider="target">
@@ -141,7 +140,6 @@
                             <state key="normal" title="Privacy Policy" image="privacyPolicy"/>
                             <state key="selected" image="addIconHighlighted"/>
                             <connections>
-                                <action selector="clickedAddDish:" destination="-1" eventType="touchUpInside" id="oPd-2Z-eQk"/>
                                 <action selector="clickedPrivacyPolicy:" destination="-1" eventType="touchUpInside" id="gof-hk-hPQ"/>
                             </connections>
                         </button>
@@ -157,7 +155,6 @@
                             <state key="selected" image="scheduleIconHighlighted"/>
                             <connections>
                                 <action selector="clickedRateUs:" destination="-1" eventType="touchUpInside" id="ezF-Lg-IKk"/>
-                                <action selector="clickedSchedule:" destination="-1" eventType="touchUpInside" id="vQ7-m8-Edw"/>
                             </connections>
                         </button>
                     </subviews>
