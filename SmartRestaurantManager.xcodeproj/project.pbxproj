@@ -770,8 +770,9 @@
 				DEVELOPMENT_TEAM = 9YUSQBCAX9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SmartRestaurantManager/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "We need access to your camera to take photos.";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need access to your photo library to choose photos.";
+				INFOPLIST_KEY_CFBundleDisplayName = PlatePalette;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires camera access to allow users to take photos of dishes and add them to the dish.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app requires access to the photo library to enable users to select images and add photos of dishes.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Root;
@@ -782,7 +783,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.PlatePalette.WV99Application;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -805,8 +806,9 @@
 				DEVELOPMENT_TEAM = 9YUSQBCAX9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SmartRestaurantManager/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "We need access to your camera to take photos.";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need access to your photo library to choose photos.";
+				INFOPLIST_KEY_CFBundleDisplayName = PlatePalette;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires camera access to allow users to take photos of dishes and add them to the dish.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app requires access to the photo library to enable users to select images and add photos of dishes.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Root;
@@ -817,7 +819,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.PlatePalette.WV99Application;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
